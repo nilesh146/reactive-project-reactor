@@ -1,0 +1,25 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.ace'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'io.projectreactor:reactor-core:3.6.11'
+	testImplementation 'io.projectreactor:reactor-test:3.6.11'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
